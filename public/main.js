@@ -11,18 +11,16 @@ const nameModal = document.getElementById('name-modal');
 const modalNameInput = document.getElementById('modal-name-input');
 const joinBtn = document.getElementById('join-btn');
 
-// Saat tombol Gabung diklik
 joinBtn.addEventListener('click', () => {
     const name = modalNameInput.value.trim();
     if (name) {
-        nameInput.value = name; // Pindahkan nama ke input asli di header
-        nameModal.style.display = 'none'; // Sembunyikan modal
+        nameInput.value = name; 
+        nameModal.style.display = 'none';
     } else {
         alert("Nama tidak boleh kosong!");
     }
 });
 
-// Izinkan tekan 'Enter' di modal
 modalNameInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') joinBtn.click();
 });
