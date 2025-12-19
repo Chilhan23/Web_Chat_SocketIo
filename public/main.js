@@ -17,6 +17,12 @@ socket.on('client-total', (total) => {
 
 
 function sendMessage() {
+    // Validasi: Jika nama masih anonymous atau kosong, minta user isi nama
+    if (nameInput.value === 'anonymous' || nameInput.value.trim() === '') {
+        alert('Silahkan masukkan nama kamu terlebih dahulu di kolom nama!');
+        nameInput.focus();
+        return;
+    }
     if(messageInput.value === '') return;
     console.log(messageInput.value);
     const data = {
