@@ -22,15 +22,15 @@ function OnConnected(socket) {
     socket.on('disconnect', () => {
         console.log('A user disconnected:', socket.id);
         socketConnections.delete(socket.id);
-        io.emit('client-total', socketConnections.size);
+        io.emit('client-total', socketConnections.size); // Update Total Client
     });
 
-    socket.on('message', (data) => {
+    socket.on('message', (data) => {  // Menerima Pesan Dari Pengguna
         console.log(data);
        socket.broadcast.emit('chat-message', data);
     });
 
-    socket.on('feedback', (data) => {
+    socket.on('feedback', (data) => { // Menerima Feedback Dari Pengguna
         socket.broadcast.emit('feedback', data);
     });
 }

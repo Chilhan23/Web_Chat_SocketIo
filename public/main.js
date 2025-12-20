@@ -13,19 +13,20 @@ joinBtn.addEventListener('click', () => {
     const name = modalNameInput.value.trim();
     if (name) {
         nameModal.style.display = 'none';
-        nameInput.innerText = name;
+        nameInput.value = name; //Untuk Memberi Nilai Pada Nama Agar Diketahui dan tidak undefined
+        nameInput.innerHTML = name; // Untuk Menampilkan Nama Dibagian Atas
     } else {
         alert("Nama tidak boleh kosong!");
     }
 });
  
 modalNameInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') joinBtn.click();
+    if (e.key === 'Enter') joinBtn.click(); 
 });
 
 
 messageForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
    sendMessage();
 });
 
@@ -45,14 +46,14 @@ function sendMessage() {
         message : messageInput.value,
         dateTime : new Date().toLocaleString()
     }
-    socket.emit('message',data);
+    socket.emit('message',data); // Mengirim Pesan Ke Server
     addMessageToUI(true, data);
     messageInput.value = '';
 }
 
 socket.on('chat-message', (data) => {
     addMessageToUI(false, data);
-});
+});  //Menerima Pesan Dari pengguna lain 
 
 
 function addMessageToUI(isOwnMessage, data){
@@ -95,7 +96,7 @@ socket.on('feedback', (data) => {
              <li class="message-feedback">
                 <p class="feedback" id="feedback">${data.feedback}</p>
             </li>
-    `
+    `   
     message.innerHTML += element;
 })
 
