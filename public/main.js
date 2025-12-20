@@ -5,8 +5,6 @@ const message = document.getElementById('message-container');
 const nameInput = document.getElementById('name-input');
 const messageForm = document.getElementById('message-form');
 const messageInput = document.getElementById('message-input');
-
-
 const nameModal = document.getElementById('name-modal');
 const modalNameInput = document.getElementById('modal-name-input');
 const joinBtn = document.getElementById('join-btn');
@@ -14,17 +12,17 @@ const joinBtn = document.getElementById('join-btn');
 joinBtn.addEventListener('click', () => {
     const name = modalNameInput.value.trim();
     if (name) {
-        nameInput.value = name; 
         nameModal.style.display = 'none';
         nameInput.innerText = name;
     } else {
         alert("Nama tidak boleh kosong!");
     }
 });
-
+ 
 modalNameInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') joinBtn.click();
 });
+
 
 messageForm.addEventListener('submit', (e) => {
     e.preventDefault();
