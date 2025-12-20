@@ -16,6 +16,7 @@ joinBtn.addEventListener('click', () => {
     if (name) {
         nameInput.value = name; 
         nameModal.style.display = 'none';
+        nameInput.innerText = name;
     } else {
         alert("Nama tidak boleh kosong!");
     }
@@ -30,18 +31,15 @@ messageForm.addEventListener('submit', (e) => {
    sendMessage();
 });
 
+
+
 socket.on('client-total', (total) => {
    clientsTotal.innerText = `Total Client : ${total}`;
 });
 
 
 function sendMessage() {
-    // Validasi: Jika nama masih anonymous atau kosong, minta user isi nama
-    if (nameInput.value === 'anonymous' || nameInput.value.trim() === '') {
-        alert('Silahkan masukkan nama kamu terlebih dahulu di kolom nama!');
-        nameInput.focus();
-        return;
-    }
+    
     if(messageInput.value === '') return;
     console.log(messageInput.value);
     const data = {
@@ -61,7 +59,6 @@ socket.on('chat-message', (data) => {
 
 function addMessageToUI(isOwnMessage, data){
     clearFeedback();
-    // Cek apakah moment tersedia agar tidak crash
     const timeString = typeof moment !== 'undefined' 
                        ? moment(data.dateTime).fromNow() 
                        : data.dateTime;
