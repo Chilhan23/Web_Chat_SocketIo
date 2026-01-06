@@ -1,63 +1,41 @@
-# 💬 Web Chat Real-Time
+# 💬 WebChat Real-Time
 
-Aplikasi chat berbasis web yang modern, cepat, dan responsif. Memungkinkan pengguna untuk berkomunikasi secara langsung (*real-time*) dengan antarmuka yang bersih dan fitur indikator pengetikan.
-
----
-
-## ✨ Fitur Unggulan
-
-* **Real-Time Messaging**: Kirim dan terima pesan seketika tanpa perlu memuat ulang halaman berkat teknologi Socket.io.
-* **Indikator Mengetik**: Mengetahui kapan lawan bicara sedang mengetik pesan.
-* **Penghitung Pengguna**: Menampilkan jumlah total pengguna yang sedang aktif/online di dalam room.
-* **Identitas Pengguna**: Modal awal untuk memasukkan nama agar percakapan lebih personal.
-* **Desain Modern**: Antarmuka pengguna yang bersih menggunakan font Poppins dan skema warna biru yang nyaman di mata.
-* **Timestamp Dinamis**: Menampilkan waktu pengiriman pesan yang presisi menggunakan Moment.js.
+A simple, modern, and fast real-time chat application built with **Node.js**, **Express**, and **Socket.io**.
 
 ---
 
-## 🚀 Teknologi yang Digunakan
+## ✨ Features
 
-* **Backend**: [Node.js](https://nodejs.org/) & [Express](https://expressjs.com/) (v5.2.1)
-* **Real-Time Engine**: [Socket.io](https://socket.io/) (v4.8.1)
-* **Frontend**: HTML5, CSS3, & JavaScript Vanilla
-* **Library Pendukung**: Font Awesome (Ikon) & Moment.js (Format Waktu)
+* **Real-Time Messaging**: Instant chat without refreshing the page.
+* **Typing Indicator**: See when others are typing a message.
+* **User Counter**: Live tracking of how many users are online.
+* **Modern UI**: Clean design using the Poppins font and a responsive layout.
+* **Timestamps**: Messages show "time ago" using Moment.js.
 
 ---
 
-## 🛠️ Cara Instalasi
+## 🚀 Tech Stack
 
-Pastikan Anda sudah menginstal **Node.js** di komputer Anda.
+* **Backend**: Node.js & Express.
+* **Real-Time**: Socket.io.
+* **Frontend**: HTML, CSS, and Vanilla JavaScript.
+* **Libraries**: Font Awesome & Moment.js.
 
-1.  **Clone repositori ini**
-    ```bash
-    git clone [https://github.com/username/web_chat_socketio.git](https://github.com/username/web_chat_socketio.git)
-    cd web_chat_socketio
-    ```
+---
 
-2.  **Instal *dependencies***
+## 🛠️ Quick Start
+
+1.  **Install dependencies**
     ```bash
     npm install
     ```
 
-3.  **Jalankan aplikasi**
-    * Untuk mode produksi:
-        ```bash
-        npm start
-        ```
-    * Untuk mode pengembangan (menggunakan nodemon):
-        ```bash
-        npm run dev
-        ```
+2.  **Run the app**
+    ```bash
+    npm start
+    ```
 
-4.  **Buka di Browser**
-    Akses aplikasi di `http://localhost:4000`.
-
----
-
-## 📁 Struktur Folder
-
-* `app.js`: Server utama Node.js dan konfigurasi Socket.io.
-* `public/`: Berisi aset frontend (HTML, CSS, JS).
-* `package.json`: Informasi proyek dan daftar library yang digunakan.
+3.  **Open in Browser**
+    Go to `http://localhost:4000`.
 
 ---
